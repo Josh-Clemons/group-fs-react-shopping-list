@@ -53,4 +53,39 @@ router.delete('/deleteall', (req, res) => {
     })
 })
 
+router.put(`/:id`, (req, res) => {
+    let id = req.params.id;
+
+    let queryText = `
+        UPDATE "items"
+        SET "isPurchased" = 'true'
+        WHERE "id" = $1;
+    `;
+
+    let values = [id];
+
+    pool.query(queryText, values)
+        .then((result) => {
+            console.log(`success /items PUT`, id);
+            res.sendStatus(200);
+        }).catch((error) => {
+            console.log(`ERROR in /items PUT`, error);
+            res.sendStatus(500);
+    })
+}); //end PUT
+
+router.delete('/:id', (req, res) => {
+    let id = req.params.id;
+    let queryText = `
+    DELETE FROM "items"
+    WHERE "id" = $1;
+    `;
+    pool.query(queryText, [id])
+    .then(response => {
+        res.sendStatus(200);
+    }).catch(error => {
+        console.log('Error in DELETE', error);
+        res.sendStatus(500);
+    });
+});//End DELETE
 module.exports=router;
