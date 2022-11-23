@@ -28,7 +28,7 @@ function App() {
         <div className="App">
             <Header />
             <main>
-                <List shoppingList={shoppingList} />
+                <List shoppingList={shoppingList} getList={getList} />
             </main>
         </div>
     );
