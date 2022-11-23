@@ -4,6 +4,7 @@ import Header from '../Header/Header.jsx';
 import './App.css';
 import axios from 'axios';
 import AddItemForm from '../AddItemForm/AddItemForm.jsx';
+import List from '../List/List.jsx';
 
 
 
@@ -29,9 +30,9 @@ function App() {
         <div className="App">
             <Header />
             <main>
-                <p>Under Construction...</p>
+                <AddItemForm getList={getList} />
+                <List shoppingList={shoppingList} getList={getList} />
             </main>
-            <AddItemForm getList={getList} />
         </div>
     );
 }
