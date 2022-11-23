@@ -2,7 +2,8 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import Header from '../Header/Header.jsx';
 import './App.css';
-import axios from 'react';
+import axios from 'axios';
+import List from '../List/List.jsx';
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
         <div className="App">
             <Header />
             <main>
-                <p>Under Construction...</p>
+                <List shoppingList={shoppingList} />
             </main>
         </div>
     );
