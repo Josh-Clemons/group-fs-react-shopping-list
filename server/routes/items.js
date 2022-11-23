@@ -17,6 +17,23 @@ router.get('/', (req, res) => {
 
 
 
+router.post('/', (req, res) => {
+    const queryText = `INSERT INTO "items" ("name", "qty", "unit") VALUES ($1, $2, $3)`;
+
+
+    pool.query(queryText, [req.body.name, req.body.qty, req.body.unit])
+        .then((results) => {
+            console.log('POSTED to server:', req.body);
+            res.sendStatus(201);
+        }).catch((err) => {
+            alert('error POSTing', err);
+        });
+});
+
+
+
+
+
 
 
 
