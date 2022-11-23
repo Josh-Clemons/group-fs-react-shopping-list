@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {useState} from 'react'
+import './AddItemForm.css'
 
 function addItemForm(props) {
 
@@ -59,6 +60,7 @@ function addItemForm(props) {
                     value={unit}
                     onChange={(event) => setUnit(event.target.value)}
                 />
+                <br/>
                 <button type="submit">Save</button>
             </form>
         </div>
