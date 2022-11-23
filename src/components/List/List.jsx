@@ -30,7 +30,7 @@ export default function List(props){
       <button onClick={emptyDatabase}>Clear</button>
       <div className="shoppingContainer">
         {props.shoppingList.map(listItem => (
-          <ShoppingItem key={listItem.id} listItem={listItem}/>
+          <ShoppingItem key={listItem.id} listItem={listItem} getList={props.getList} />
         ))}
       </div>
 
