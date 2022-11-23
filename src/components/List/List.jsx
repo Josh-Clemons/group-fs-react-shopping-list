@@ -1,5 +1,6 @@
 import ShoppingItem from '../ShoppingItem/ShoppingItem';
 import axios from 'axios';
+import './List.css';
 
 export default function List(props){
 
@@ -22,15 +23,16 @@ export default function List(props){
   }
 
   return (
-    <div>
+    <div className='listContent'>
       <h2>Shopping List</h2>
       <br />
       <button onClick={resetList}>Reset</button>
       <button onClick={emptyDatabase}>Clear</button>
-
-      {props.shoppingList.map(listItem => (
-        <ShoppingItem key={listItem.id} listItem={listItem}/>
-      ))}
+      <div className="shoppingContainer">
+        {props.shoppingList.map(listItem => (
+          <ShoppingItem key={listItem.id} listItem={listItem} getList={props.getList} />
+        ))}
+      </div>
 
     </div>
   )

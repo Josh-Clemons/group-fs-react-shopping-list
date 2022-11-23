@@ -1,0 +1,19 @@
+input {
+    margin: 5px;
+}
+
+button {
+    margin-top: 5px;
+}
+
+#qtyInput {
+    width: 50px;
+}
+
+#unitInput {
+    width: 150px;
+}
+
+#itemInput {
+    width: 284px;
+}

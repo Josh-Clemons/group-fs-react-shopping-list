@@ -1,0 +1,10 @@
+.shoppingCard{
+  border-radius: 6px;
+  background-color: rgb(241, 241, 241);
+  padding: 15px;
+  text-align: center;
+}
+
+button{
+  margin: 5px;
+}
