@@ -3,7 +3,8 @@ import {useState, useEffect} from 'react';
 import Header from '../Header/Header.jsx';
 import './App.css';
 import axios from 'axios';
-import List from '../List/List.jsx';
+import AddItemForm from '../AddItemForm/AddItemForm.jsx';
+
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <main>
                 <List shoppingList={shoppingList} getList={getList} />
             </main>
+            <AddItemForm getList={getList} />
         </div>
     );
 }
