@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool.js');
 
 router.get('/', (req, res) => {
-    const queryText = `SELECT * FROM "fs-react-shopping" ORDER BY "id"`;
+    const queryText = `SELECT * FROM "items" ORDER BY "id"`;
 
     pool.query(queryText)
         .then((result) => {
@@ -14,3 +14,5 @@ router.get('/', (req, res) => {
             alert('error GETing:', err)
         });
 });
+
+module.exports=router;
