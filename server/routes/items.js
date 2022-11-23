@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const pool = required('../modules/pool.js');
+const pool = require('../modules/pool.js');
 
 router.get('/', (req, res) => {
     const queryText = `SELECT * FROM "fs-react-shopping" ORDER BY "id"`;
