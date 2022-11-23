@@ -1,21 +1,23 @@
 import './ShoppingItem.css';
 import axios from "axios";
 
-export default function ShoppingItem({listItem}) {
+export default function ShoppingItem({listItem, getList}) {
     const deleteItem = () => {
         console.log(`Delete Item ID`, listItem.id);
         axios.delete('/items/' + listItem.id)
         .then(response => {
+            getList();
         }).catch(error => {
             console.log('Error in DELETE', error);
         });
       }
     
     const itemPurchased = () => {
-        console.log('Purchased',listItem.name )
-        axios.put('/items/' + listItem.name)
+        console.log('Purchased',listItem.id )
+        axios.put('/items/' + listItem.id)
         .then((result) => {
-            console.log(`success /items PUT`, id);
+            getList();
+            console.log(`success /items PUT`, listItem.id);
         }).catch((error) => {
             console.log(`ERROR in /items PUT`, error);
             
