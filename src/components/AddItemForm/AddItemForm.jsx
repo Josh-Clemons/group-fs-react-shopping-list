@@ -1,11 +1,6 @@
 import axios from 'axios';
 import {useState} from 'react'
 
-
-// need to pass me prop for getList
-
-
-
 function addItemForm(props) {
 
     const [item, setItem] = useState('');
@@ -24,8 +19,17 @@ function addItemForm(props) {
     }
 
     const addItem = () => {
-        axios.
-    }
+        axios.post('/items', {name:item, qty:qty, unit:unit})
+            .then(response => {
+                console.log('in POST');
+                setItem('');
+                setQty('');
+                setUnit('');
+                props.getList();
+            }).catch(err=>{
+                alert('error POSTing', err);
+            });
+    };
 
     return (
         <div>
