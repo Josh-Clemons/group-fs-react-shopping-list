@@ -16,7 +16,6 @@ router.get('/', (req, res) => {
 });
 
 
-
 router.post('/', (req, res) => {
     const queryText = `INSERT INTO "items" ("name", "qty", "unit") VALUES ($1, $2, $3)`;
 
@@ -29,30 +28,6 @@ router.post('/', (req, res) => {
             alert('error POSTing', err);
         });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // PUT request for resetting purchase status on all database items to false
 router.put('/reset', (req, res) => {
