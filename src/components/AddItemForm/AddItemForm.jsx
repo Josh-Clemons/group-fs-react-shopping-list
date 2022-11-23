@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {useState} from 'react'
 
 
@@ -23,7 +24,7 @@ function addItemForm(props) {
     }
 
     const addItem = () => {
-        // in here goes axios.post request
+        axios.
     }
 
     return (
