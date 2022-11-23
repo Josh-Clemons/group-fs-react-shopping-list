@@ -1,6 +1,6 @@
 import ShoppingItem from '../ShoppingItem/ShoppingItem';
 
-export default function List({props}){
+export default function List(props){
 
   const resetList = () => {
     axios.put('/items/reset').then(response => {
@@ -28,7 +28,7 @@ export default function List({props}){
       <button onClick={emptyDatabase}>Clear</button>
 
       {props.shoppingList.map(listItem => (
-        <ShoppingItem listItem={listItem}/>
+        <ShoppingItem key={listItem.id} listItem={listItem}/>
       ))}
 
     </div>

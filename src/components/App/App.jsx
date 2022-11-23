@@ -30,9 +30,9 @@ function App() {
         <div className="App">
             <Header />
             <main>
+                <AddItemForm getList={getList} />
                 <List shoppingList={shoppingList} getList={getList} />
             </main>
-            <AddItemForm getList={getList} />
         </div>
     );
 }
